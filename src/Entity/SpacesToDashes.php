@@ -12,4 +12,6 @@ class SpacesToDashes implements transform
         $dash = strtolower($string);
         return str_replace(' ', '-', $dash);
     }
+
+
 }

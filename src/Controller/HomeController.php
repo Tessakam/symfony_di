@@ -17,6 +17,40 @@ class HomeController extends AbstractController
      */
     public function index(): Response
     {
+        if (isset($_POST['string'])) {
+            $caps = new Capitalize();
+            $dashes = new SpacesToDashes();
+
+
+            if ($_POST["choice"] == "caps") {
+                return $this->render('home/index.html.twig', [
+                    'controller_name' => 'with caps',
+                    'caps' => $caps->transform($_POST['string']),
+                    'dashes' => " "
+                ]);
+
+            } else {
+                return $this->render('home/index.html.twig', [
+                    'controller_name' => 'with spaces',
+                    'caps' => "",
+                    'dashes' => $dashes->transform($_POST['string'])
+                ]);
+            }
+
+        } else {
+            $_POST['string'] = "Please enter something";
+            $_POST['choice'] = "caps";
+            return $this->render('home/index.html.twig', [
+                'controller_name' => 'Dependency Injection',
+                'caps' => " ",
+                'dashes' => " "
+            ]);
+        }
+    }
+}
+
+/* Original code with 2 separate input fields
+
         // link with home/index sentences 1 capitalize
         if (!isset($_POST['sentence1'])) {
             $_POST['sentence1'] = "";
@@ -33,7 +67,4 @@ class HomeController extends AbstractController
         return $this->render('home/index.html.twig', [
             'controller_name' => 'Dependency Injection',
             'sentence1' => $capitalization->transform($_POST['sentence1']),
-            'sentence2' => $dashes->transform($_POST['sentence2']),
-        ]);
-    }
-}
+            'sentence2' => $dashes->transform($_POST['sentence2']),*/

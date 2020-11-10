@@ -10,23 +10,24 @@
 
 <div class="example-wrapper">
     <h1>Hello {{ controller_name }}! ✅</h1>
-    <form action="" method="post">
-        <div class="input-group mb-2">
-            <input type="text" name="sentence" class="form-control" placeholder="Capitalize every other letter">
-            <div class="input-group-append">
-                <button type="submit" name="submit" class="btn btn-primary">Submit</button>
-            </div>
-        </div>
-        <br>
-        <div class="input-group mb-2">
-            <input type="text" name="sentence2" class="form-control" placeholder="Replace spaces to dashes">
-            <div class="input-group-append">
-                <button type="submit" name="submit2" class="btn btn-primary">Submit</button>
-            </div>
-        </div>
+    <form action=""  method="post">
+        <label>Please type something you want
+            <input name="string" type="text">
+            <select name="choice">
+                <option value="caps">
+                    Capitalise
+                </option>
+                <option value="spaces">
+                    Spaces to dashes
+                </option>
+            </select>
+            <input type="submit">
+        </label>
+
+        <!--<a href=""> The next page </a>-->
     </form>
-    <p>Result capitalize: {{ sentence1 }}</p>
-    <p>Result spaces to dashes: {{ sentence2 }}</p>
+    <p>Result capitalize: {{ caps }}</p>
+    <p>Result spaces to dashes: {{ dashes }}</p>
 </div>
 
 {% endblock %}

@@ -9,15 +9,15 @@ class Capitalize implements transform
 
     public function transform(string $string): string
     {
-        $newString = '';
+        $string = '';
         foreach (str_split($string) as $index => $char) {
-            $newString .= ($index % 2) ? strtoupper($char) : strtolower($char);
+            $string .= ($index % 2) ? strtoupper($char) : strtolower($char);
             // strtoupper - Make a string uppercase
             // strtolower - Make a string lowercase
         }
         $logMessage = new LoggerInfo();
-        $logMessage->logInfo($newString);
-        return $newString;
+        $logMessage->logInfo($string);
+        return $string;
     }
 }
 
