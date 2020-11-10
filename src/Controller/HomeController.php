@@ -2,12 +2,13 @@
 
 namespace App\Controller;
 
-use App\Entity\transform;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
 use App\Entity\Capitalize;
 use App\Entity\SpacesToDashes;
+use App\Entity\LoggerInfo;
+use App\Entity\transform;
 
 class HomeController extends AbstractController
 {

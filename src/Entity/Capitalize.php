@@ -15,6 +15,8 @@ class Capitalize implements transform
             // strtoupper - Make a string uppercase
             // strtolower - Make a string lowercase
         }
+        $logMessage = new LoggerInfo();
+        $logMessage->logInfo($newString);
         return $newString;
     }
 }
