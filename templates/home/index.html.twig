@@ -1,0 +1,31 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Hello HomeController!{% endblock %}
+
+{% block body %}
+<style>
+    .example-wrapper { margin: 1em auto; max-width: 800px; width: 95%; font: 18px/1.5 sans-serif; }
+    .example-wrapper code { background: #F5F5F5; padding: 2px 6px; }
+</style>
+
+<div class="example-wrapper">
+    <h1>Hello {{ controller_name }}! ✅</h1>
+    <form action="" method="post">
+        <div class="input-group mb-2">
+            <input type="text" name="sentence" class="form-control" placeholder="Capitalize every other letter">
+            <div class="input-group-append">
+                <button type="submit" name="submit" class="btn btn-primary">Submit</button>
+            </div>
+        </div>
+        <div class="input-group mb-2">
+            <input type="text" name="sentence2" class="form-control" placeholder="Replace spaces to dashes">
+            <div class="input-group-append">
+                <button type="submit" name="submit2" class="btn btn-primary">Submit</button>
+            </div>
+        </div>
+    </form>
+    <p>{{ sentence1 }}</p>
+    <p>{{ sentence2 }}</p>
+</div>
+
+{% endblock %}
